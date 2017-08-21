@@ -1,23 +1,35 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div	ng-if="storage.savedCities">
+  <h2>Saved	Cities</h2>
+  <ul	class="saved-cities-list">
+    <li	ng-repeat="city	in	storage.savedCities">
+      <a	ng-href="#!/current/{{city.id}}"	class="btn	btn-lg	btn-primary">{{city.name}}</a>
+    </li>
+  </ul>
+  <p><button class="btn btn-sm btn-primary" ng-click="removeCity()">Clear Cities</button></p>
 </div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+<div	ng-app	class="jumbotron"	ng-controller="MainCtrl">
+  <h1>Select	Your	City</h1>
+  <p	class="lead">
+    <div	ng-init="location='Seattle'">
+      <p>
+        <label	for="location">Location:
+          <input	type="text"	name="location"	ng-model="location">
+        </label>
+      </p>
+      <p>
+        <button	class="btn	btn-lg	btn-primary"	ng-click="findCities()">Find	City</button>
+      </p>
+    </div>
+    <div	ng-if="searchQuery">
+      <p	class="lead">{{citiesFound.count}}	cities	found	matching	the	query:	{{searchQuery}}.</p>
+      <dl	ng-repeat="city	in	citiesFound.list">
+        <dt>{{city.name}},	{{city.sys.country}}</dt>
+        <dd>{{city.weather[0].main}}	-	{{city.weather[0].description}}</dd>
+        <dt>Temperature</dt>
+        <dd>{{city.main.temp}}	&deg;F</dd>
+        <dd><img ng-src="http://openweathermap.org/img/w/{{city.weather[0].icon}}.png" alt="icon" style="width:250px;height:250px;"></dd>
+        <dd><a	ng-href="#!/current/{{city.id}}"	class="btn	btn-lg	btn-primary">View	Weather</a></dd>
+      </dl>
+    </div>
   </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
 </div>

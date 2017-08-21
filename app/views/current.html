@@ -1,0 +1,28 @@
+<div class="jumbotron">
+<h1>Current	Weather	for	{{currentWeather.name}}</h1>
+<p><button	class="btn	btn-sm	btn-primary"	ng-click="saveCity(currentWeather)">Save	City</button></p>
+<div	ng-messages="citySaved">
+  <p	class="city-saved-alert	bg-success	text-success"	ng-message="success">
+    {{currentWeather.name}}	has	been	saved	to	your	list	of	cities.
+  </p>
+  <p	class="city-saved-alert	bg-warning	text-warning"	ng-message="duplicate">
+    {{currentWeather.name}}	has	already	been	saved	to	your	list	of	cities.
+  </p>
+</div>
+<dl>
+  <dt>Currently</dt>
+  <dd>{{currentWeather.weather[0].main}}</dd>  <!-- turn off -->
+  <dd>{{currentWeather.weather[0].description}}</dd>
+  <dt>Temperature</dt>
+  <dd>{{currentWeather.main.temp}}	&deg;F</dd>
+  <dd><img src="http://openweathermap.org/img/w/{{currentWeather.weather[0].icon}}.png" alt="icon" style="width:250px;height:250px;"></dd>
+  <dd>High:	{{currentWeather.main.temp_max}}	&deg;F</dd> <!-- turn off -->
+  <dd>Low:	{{currentWeather.main.temp_min}}	&deg;F</dd> <!-- turn off -->
+  <dt>Wind</dt>
+  <dd>{{currentWeather.wind.speed}}	mph	at	{{currentWeather.wind.deg}}	&deg;</dd>
+  <dt>Clouds</dt>
+  <dd>{{currentWeather.clouds.all}}%</dd>
+</dl>
+
+<p><a	ng-href="#!/forecast/{{cityID}}"	class="btn	btn-lg	btn-primary">View	7-day	Forecast</a></p>
+<p><a ng-href="#!/" class="btn btn-lg btn-primary">Select New City</a></p>
