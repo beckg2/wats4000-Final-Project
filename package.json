@@ -39,6 +39,7 @@
     "test": "karma start test\\karma.conf.js"
   },
   "dependencies": {
-    "bower-logger": "^0.2.2"
+    "bower-logger": "^0.2.2",
+    "promptly": "^2.2.0"
   }
 }
