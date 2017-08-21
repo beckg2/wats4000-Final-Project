@@ -1,4 +1,4 @@
-// Generated on 2017-08-20 using generator-angular 0.16.0
+// Generated on 2017-08-21 using generator-angular 0.16.0
 'use strict';
 
 // # Globbing
@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
-    buildcontrol: 'grunt-build-control'
+    buildcontrol:	'grunt-build-control'
   });
 
   // Configurable paths for the application
@@ -32,7 +32,7 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: appConfig,
 
-		buildcontrol:	{
+    buildcontrol:	{
       options:	{
         dir:	'dist',
         commit:	true,
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['sass:server', 'autoprefixer']  // possible remove 'autoprefixer'
+        tasks: ['sass:server', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -252,19 +252,19 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.app %>/styles',
-          src: ['*.scss'],
-          dest: '.tmp/styles',
-          ext: '.css'
+          cwd:	'<%=	yeoman.app	%>/styles',
+          src:	['*.scss'],
+          dest:	'.tmp/styles',
+          ext:	'.css'
         }]
       },
       server: {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.app %>/styles',
-          src: ['*.scss'],
-          dest: '.tmp/styles',
-          ext: '.css'
+          cwd:	'<%=	yeoman.app	%>/styles',
+          src:	['*.scss'],
+          dest:	'.tmp/styles',
+          ext:	'.css'
         }]
       }
     },
@@ -385,7 +385,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'wats4000ProjectTowardsAMoreUsableApplicationApp',
+          module: 'wats4000FinalProjectApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },
