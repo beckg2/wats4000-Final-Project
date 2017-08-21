@@ -1,4 +1,4 @@
-// Generated on 2017-07-14 using generator-angular 0.16.0
+// Generated on 2017-08-20 using generator-angular 0.16.0
 'use strict';
 
 // # Globbing
@@ -32,17 +32,17 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: appConfig,
 
-    buildcontrol: {
-      options: {
-        dir: 'dist',
-        commit: true,
-        push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+		buildcontrol:	{
+      options:	{
+        dir:	'dist',
+        commit:	true,
+        push:	true,
+        message:	'Built	%sourceName%	from	commit	%sourceCommit%	on	branch	%sourceBranch%'
       },
-      pages: {
-        options: {
-          remote: 'git@github.com:beckg2/wats4000-Final-Project.git',
-          branch: 'gh-pages'
+      pages:	{
+        options:	{
+          remote:	'git@github.com:beckg2/wats4000-Final-Project.git',
+          branch:	'gh-pages'
         }
       }
     },
@@ -65,8 +65,8 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'newer:jscs:test', 'karma']
       },
       sass: {
-          files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-          tasks: ['sass:server', 'autoprefixer']
+        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks: ['sass:server', 'autoprefixer']  // possible remove 'autoprefixer'
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -244,29 +244,29 @@ module.exports = function (grunt) {
 
     // Compiles Sass to CSS and generates necessary files if requested
     sass: {
-        options: {
-            includePaths: [
-                'bower_components'
-            ]
-        },
-        dist: {
-            files: [{
-                expand: true,
-                cwd: '<%= yeoman.app %>/styles',
-                src: ['*.scss'],
-                dest: '.tmp/styles',
-                ext: '.css'
-            }]
-        },
-        server: {
-            files: [{
-                expand: true,
-                cwd: '<%= yeoman.app %>/styles',
-                src: ['*.scss'],
-                dest: '.tmp/styles',
-                ext: '.css'
-            }]
-        }
+      options: {
+        includePaths: [
+          'bower_components'
+        ]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/styles',
+          src: ['*.scss'],
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      },
+      server: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/styles',
+          src: ['*.scss'],
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      }
     },
 
     // Renames files for browser caching purposes
@@ -385,7 +385,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'wats4000FinalProjectApp',
+          module: 'wats4000ProjectTowardsAMoreUsableApplicationApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },

@@ -11,7 +11,9 @@
 angular
   .module('wats4000FinalProjectApp', [
     'ngAnimate',
+    'ngAria',
     'ngCookies',
+    'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
